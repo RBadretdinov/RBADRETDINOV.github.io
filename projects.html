@@ -1,44 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Projects | Your Name</title>
-
-  <!-- Link to CSS -->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio projects showcase">
+    <title>Projects - Your Name</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Your Name</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-  </nav>
+    <main>
+        <section class="projects-section">
+            <div class="container">
+                <h1 class="section-title">My Projects</h1>
+                <div class="projects-grid">
+                    
+                    <!-- Project Card Template - Copy and modify for each project -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/project-placeholder.jpg" alt="Project Name">
+                        </div>
+                        <div class="project-content">
+                            <h2 class="project-title">Project Name</h2>
+                            <p class="project-description">
+                                Brief description of your project. What it does, what problem it solves,
+                                and what technologies you used.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/yourusername/project" target="_blank" class="project-link">GitHub</a>
+                                <a href="https://project-demo.com" target="_blank" class="project-link">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
 
-  <h1>Projects</h1>
+                    <!-- Add more project cards here -->
+                    <!-- 
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/project2.jpg" alt="Project 2">
+                        </div>
+                        <div class="project-content">
+                            <h2 class="project-title">Project 2</h2>
+                            <p class="project-description">Description...</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Flask</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link">GitHub</a>
+                                <a href="#" target="_blank" class="project-link">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    -->
 
-  <section>
-    <h2>Memory Game</h2>
-    <p>
-      A Python card-matching game built using CodeSkulptor. The game tracks
-      turns, handles card states, and resets properly.
-    </p>
-    <p><strong>Technologies:</strong> Python</p>
-    <p>
-      <a href="https://github.com/yourusername/memory-game">View on GitHub</a>
-    </p>
-  </section>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <section>
-    <h2>Blackjack</h2>
-    <p>
-      A Python implementation of Blackjack featuring a dealer, player hand,
-      scoring logic, and game state management.
-    </p>
-    <p><strong>Technologies:</strong> Python</p>
-    <p>
-      <a href="https://github.com/yourusername/blackjack">View on GitHub</a>
-    </p>
-  </section>
-
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
+
