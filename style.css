@@ -331,6 +331,45 @@ body {
     transform: scale(1.05);
 }
 
+/* Side-by-side image comparison */
+.project-image-comparison {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    gap: 2px;
+    overflow: hidden;
+}
+
+.project-image-comparison .comparison-item {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-image-comparison .comparison-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.project-card:hover .project-image-comparison .comparison-item img {
+    transform: scale(1.05);
+}
+
+.comparison-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    color: white;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    text-align: center;
+    font-weight: 500;
+}
+
 .project-content {
     padding: 1.5rem;
 }
