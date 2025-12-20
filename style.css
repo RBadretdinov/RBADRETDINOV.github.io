@@ -64,6 +64,11 @@ body {
     color: var(--text-color);
     font-weight: 500;
     transition: color 0.3s;
+    cursor: pointer;
+}
+
+.nav-dropdown > .nav-link {
+    cursor: default;
 }
 
 .nav-link:hover,
@@ -116,7 +121,8 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-.dropdown-menu a:hover {
+.dropdown-menu a:hover,
+.dropdown-menu a.active {
     background-color: var(--light-bg);
     color: var(--primary-color);
 }

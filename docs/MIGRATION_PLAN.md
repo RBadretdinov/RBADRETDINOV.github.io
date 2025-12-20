@@ -32,7 +32,7 @@ Before migrating, you need to catalog all content from your Google Sites portfol
 4. **Media Assets**
    - Images (profile, project screenshots, logos)
    - Videos (if any)
-   - PDFs (resume, certificates)
+   - PDFs (resume, certificates) 
 
 ## Step 2: Content Extraction
 1. Visit your Google Sites portfolio
