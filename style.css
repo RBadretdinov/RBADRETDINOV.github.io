@@ -20,7 +20,7 @@
 }
 
 body {
-    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
@@ -447,39 +447,252 @@ footer p {
 .about-section {
     padding: 4rem 0;
     min-height: 80vh;
-}
-
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
-    align-items: start;
-}
-
-.about-section {
     background: linear-gradient(135deg, var(--bg-color) 0%, var(--surface-color) 100%);
 }
 
-.about-image {
-    text-align: center;
+/* About Hero/Profile Card */
+.about-hero {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
 }
 
-.about-img {
-    width: 250px;
-    height: 250px;
+.about-profile-card {
+    background-color: var(--surface-color);
+    border-radius: 20px;
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    max-width: 800px;
+    width: 100%;
+}
+
+.about-profile-img {
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid var(--primary-color);
+    flex-shrink: 0;
 }
 
-.about-text {
+.profile-card-content {
+    flex: 1;
+}
+
+.profile-card-content h2 {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.profile-tagline {
     font-size: 1.1rem;
-    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
 }
 
-.about-text p {
-    margin-bottom: 1.5rem;
+.profile-card-content .contact-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* About Introduction */
+.about-intro {
+    max-width: 900px;
+    margin: 0 auto 4rem;
+    text-align: center;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    line-height: 1.9;
     color: var(--text-secondary);
+    font-weight: 400;
+}
+
+/* About Grid */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* About Cards */
+.about-card {
+    background-color: var(--surface-color);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary-color);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.card-icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.card-header h3 {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin: 0;
+}
+
+.card-content {
+    color: var(--text-secondary);
+}
+
+/* Education List */
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.education-item {
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.education-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.education-item h4 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.education-detail {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.education-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Interests Grid */
+.interests-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.interest-item {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+}
+
+.interest-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.interest-content h4 {
+    font-size: 1.15rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.interest-content p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Goals List */
+.goals-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.goal-item h4 {
+    font-size: 1.15rem;
+    color: var(--accent-color);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.goal-item p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Values List */
+.values-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.value-item h4 {
+    font-size: 1.15rem;
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.value-item p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Responsive Design for About Page */
+@media (max-width: 768px) {
+    .about-profile-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .interest-item {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
 /* Skills Page */
@@ -508,8 +721,10 @@ footer p {
 /* Certification Styling */
 .certification-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .certification-list.professional-certifications {
@@ -533,21 +748,16 @@ footer p {
     border-color: var(--primary-color);
 }
 
-.certification-item:nth-child(4n+1) .certification-header,
-.certification-item:nth-child(4n+2) .certification-header {
-    flex-direction: row;
-}
-
-.certification-item:nth-child(4n+3) .certification-header,
-.certification-item:nth-child(4n) .certification-header {
-    flex-direction: row-reverse;
-}
 
 .certification-header {
     display: flex;
     align-items: flex-start;
     gap: 2rem;
     margin-bottom: 0;
+}
+
+.certification-item:nth-child(even) .certification-header {
+    flex-direction: row-reverse;
 }
 
 .certification-description {
