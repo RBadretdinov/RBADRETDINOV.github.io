@@ -74,9 +74,11 @@ Participated in an early college program, balancing high school requirements wit
 ### Coding & Video Games
 **Current text:** (Feel free to edit or rewrite)
 ```
-My passion for coding and video games go hand in hand. I love developing programs and scripts to solve problems, 
-and gaming has deepened my appreciation for game design, algorithms, and interactive systems. Both hobbies fuel 
-my interest in software development and inspire me to create my own projects.
+After years of playing video games, I became curious about how they worked behind the scenes. This curiosity 
+grew into a genuine interest in coding and programming. Gaming has given me an appreciation for game design, 
+algorithms, and interactive systems, which now fuels my learning journey in software development. I'm building 
+my programming skills through hands-on projects and continuously learning, motivated by the desire to understand 
+and eventually create the types of interactive experiences I've always enjoyed as a player.
 ```
 
 ### Taekwondo
@@ -124,8 +126,9 @@ many valuable connections. Team sports have taught me the value of collaboration
 [Write your description here...]
 
 Current text:
-Pursue a Computer Science degree, focusing on software development, algorithms, and data structures. I aim to 
-maintain academic excellence while exploring research opportunities and participating in hackathons.
+Pursue a Computer Science degree, focusing on software development, algorithms, and data structures. I'm particularly 
+interested in exploring artificial intelligence and machine learning, understanding how these technologies can solve 
+complex problems. I aim to maintain academic excellence while exploring research opportunities.
 ```
 
 ### Career & Professional Goals
@@ -140,7 +143,8 @@ maintain academic excellence while exploring research opportunities and particip
 
 Current text:
 Build a career as a software developer, creating innovative solutions that make a positive impact. I'm particularly 
-interested in developing applications that solve real-world problems and improve people's daily lives.
+interested in developing applications that solve real-world problems and improve people's daily lives, with a growing 
+curiosity about how AI can be applied to create smarter, more efficient solutions.
 ```
 
 ### Personal Growth Goals
@@ -154,8 +158,10 @@ interested in developing applications that solve real-world problems and improve
 [Write your description here...]
 
 Current text:
-Continue learning and growing both technically and personally. I want to contribute to open-source projects, 
-collaborate with like-minded individuals, and never stop challenging myself to learn new technologies.
+I want to become a well-rounded individual who never stops learning. This means contributing to projects using new technology, 
+collaborating with others in the community, and continuously expanding my skill set. Beyond technical growth, I aim 
+to develop my communication, leadership, and problem-solving abilities while staying curious about emerging tools and 
+their potential applications.
 ```
 
 ---
