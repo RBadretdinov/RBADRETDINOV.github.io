@@ -19,6 +19,7 @@ Write a brief welcome message (2-3 sentences) about:
 Current text:
 Welcome to my portfolio! I'm a developer passionate about creating
 innovative solutions and building meaningful projects.
+You can contact me through raynor.roma@gmail.com
 ```
 
 ---

@@ -17,7 +17,7 @@ Write a brief overview (2-3 sentences) that:
 [Write your introduction here...]
 
 Current text:
-Explore my technical expertise and professional certifications. I've earned multiple Microsoft 
+Explore my technical expertise and professional certifications. I've earned over a dozen Microsoft 
 certifications and continue to develop my skills in software development and professional communication.
 ```
 
@@ -39,7 +39,7 @@ Current: Technical Skills
 [Write a 2-3 sentence description of what visitors will find on the Technical Skills page...]
 
 Current text:
-View my Microsoft Office certifications and technical competencies, including expert-level 
+View some of my most notable Microsoft Office certifications and technical competencies, including expert-level 
 certifications in Word, Excel, PowerPoint, and more.
 ```
 

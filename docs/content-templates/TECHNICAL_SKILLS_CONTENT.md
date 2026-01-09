@@ -4,6 +4,33 @@ Fill in the sections below with your content. Once you're done, I can easily upd
 
 ---
 
+## Coding Journey
+
+**Description:**
+```
+[Write about your coding journey here. You can include:
+- When and how you got started with programming
+- What sparked your interest in coding
+- Key milestones or learning experiences
+- Languages or technologies you've explored
+- Projects that have shaped your learning
+- What you're currently learning or working on
+- Your goals and aspirations in coding
+
+Write 2-4 paragraphs that tell your story in a compelling and personal way.
+]
+
+Current text:
+My interest in coding didn't begin right away; rather, after years of playing videogames, I became curious on how software development works. As a result, I learned about the world of programming and how much you can
+accomplish with it. I dove into Python, teaching myself by watching
+videos, reading forums, and trying to make my own mini projects. As
+artificial intelligence rapidly progressed, I began to utilize it in various projects, having it oversee code that I wasn't familiar with yet.
+
+As of now, I do believe I'm still a novice programmer. However, the progress that I've gained even in the last few months keeps me determined to learn more. While I have the basics of Python down, I am also learning a bit of HTML, so I can more effectively proofread the AI I use to create websites.
+```
+
+---
+
 ## Certification Template
 
 For each certification, you'll need:
