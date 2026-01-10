@@ -522,6 +522,20 @@ body {
     box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
 }
 
+.skill-tag-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+}
+
+.skill-description {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
 .contact-links {
     display: flex;
     gap: 1rem;
@@ -743,6 +757,26 @@ body {
     margin-bottom: 1rem;
     color: var(--text-secondary);
     line-height: 1.6;
+}
+
+.project-description p {
+    margin: 0.75rem 0 0.5rem 0;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.project-description p:first-child {
+    margin-top: 0;
+}
+
+.project-description ul {
+    margin: 0.5rem 0 1rem 1.5rem;
+    padding-left: 1rem;
+}
+
+.project-description li {
+    margin: 0.4rem 0;
+    line-height: 1.5;
 }
 
 .project-tech {
@@ -1393,6 +1427,63 @@ footer p {
     min-width: 0;
 }
 
+/* Compact Certification Grid Layout */
+.certification-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.certification-item-compact {
+    background-color: var(--surface-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.certification-item-compact:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
+    border-color: var(--primary-color);
+}
+
+.certification-badge-compact {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: var(--bg-color);
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.certification-info-compact {
+    flex: 1;
+    width: 100%;
+}
+
+.certification-name-compact {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin: 0.5rem 0;
+}
+
+.certification-summary {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
 .certification-header-text {
     text-align: left;
 }
@@ -1428,6 +1519,16 @@ footer p {
     margin: 0 auto;
 }
 
+/* Allow resume document to expand for PDF */
+.resume-document[style*="width: 816px"] {
+    max-width: 816px !important;
+    width: 816px !important;
+}
+
+.resume-content:has(.resume-document[style*="width: 816px"]) {
+    max-width: 100% !important;
+}
+
 .resume-download {
     text-align: center;
     margin-bottom: 3rem;
@@ -1439,11 +1540,14 @@ footer p {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     text-decoration: none;
+    border: none;
     border-radius: 8px;
     font-size: 1.1rem;
     transition: transform 0.2s, box-shadow 0.2s;
     font-weight: 500;
     box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    cursor: pointer;
+    font-family: inherit;
 }
 
 .resume-download-btn:hover {
@@ -1472,6 +1576,49 @@ footer p {
     border-radius: 12px;
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow);
+}
+
+/* PDF export styles - ensure white background and proper sizing */
+.resume-document[data-pdf-export] {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    padding: 2rem !important;
+    max-width: 8.5in !important;
+    width: 8.5in !important;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.resume-document[data-pdf-export] * {
+    color: #000000 !important;
+}
+
+.resume-document[data-pdf-export] .resume-name,
+.resume-document[data-pdf-export] .resume-section-title {
+    color: #1e293b !important;
+}
+
+/* PDF export styles */
+@media print {
+    .resume-document {
+        padding: 1.5rem;
+        max-width: 100%;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+        background-color: #ffffff;
+    }
+    
+    .resume-section-item {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+    
+    .resume-education-item {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
 }
 
 .resume-header {
@@ -1667,6 +1814,15 @@ footer p {
         align-items: center;
         text-align: center;
         gap: 1rem;
+    }
+
+    .certification-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certification-badge-compact {
+        width: 100px;
+        height: 100px;
     }
 
     .certification-header-text {
