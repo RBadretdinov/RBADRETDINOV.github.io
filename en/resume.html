@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resume and CV">
+    <title>Resume - Roman Badretdinov</title>
+    <link rel="alternate" hreflang="en" href="https://rbadretdinov.github.io/en/resume.html">
+    <link rel="alternate" hreflang="ru" href="https://rbadretdinov.github.io/ru/resume.html">
+    <link rel="alternate" hreflang="x-default" href="https://rbadretdinov.github.io/en/resume.html">
+    <link rel="canonical" href="https://rbadretdinov.github.io/en/resume.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="/theme-toggle.js" defer></script>
+    <script src="/animations.js" defer></script>
+    <script src="/language-toggle.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/en/index.html" class="nav-logo">Roman Badretdinov</a>
+            <ul class="nav-menu">
+                <li><a href="/en/index.html" class="nav-link">Home</a></li>
+                <li><a href="/en/about.html" class="nav-link">About Me</a></li>
+                <li class="nav-dropdown">
+                    <a href="/en/skills.html" class="nav-link">Skills <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/en/technical-skills.html">Technical Skills</a></li>
+                        <li><a href="/en/certifications.html">Certifications</a></li>
+                    </ul>
+                </li>
+                <li><a href="/en/projects.html" class="nav-link">Projects</a></li>
+                <li><a href="/en/resume.html" class="nav-link active">Resume</a></li>
+                <li>
+                    <button class="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark mode">
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/>
+                        </svg>
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
+                        </svg>
+                    </button>
+                    <a href="#" class="language-toggle" aria-label="Switch to Russian">Ru</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="resume-section">
+            <div class="container">
+                <h1 class="section-title">Resume</h1>
+                <div class="resume-content">
+                    <div class="resume-download">
+                        <button onclick="downloadResumeAsPDF()" class="resume-download-btn">
+                            📄 Download PDF Resume
+                        </button>
+                    </div>
+                    
+                    <div class="resume-document">
+                        <div class="resume-header">
+                            <h2 class="resume-name">Roman Badretdinov</h2>
+                            <div class="resume-contact">
+                                <p>950 Spanish Needle Trail • Fort Worth, TX, 76177</p>
+                                <p>raynor.roma@gmail.com • 425-219-9888</p>
+                            </div>
+                        </div>
+
+                        <div class="resume-section-item">
+                            <h3 class="resume-section-title">Summary</h3>
+                            <p class="resume-text">
+                                Ambitious and self-reliant student experienced with rigorous coursework through a dual credit program 
+                                and interested in majoring in Computer Science or other related field. Certified in various Microsoft 
+                                Office programs as well as life and career skills. Eager to learn new things, committed to surround 
+                                myself with like-minded individuals, and always open to improving myself through time and dedication.
+                            </p>
+                        </div>
+
+                        <div class="resume-section-item">
+                            <h3 class="resume-section-title">Technical Skills</h3>
+                            <ul class="resume-list">
+                                <li>Python - Programming language for automation and web development</li>
+                                <li>HTML - Web page structure and markup</li>
+                                <li>AI Management - Using AI tools like Cursor AI for code generation and project management</li>
+                            </ul>
+                        </div>
+
+                        <div class="resume-section-item">
+                            <h3 class="resume-section-title">Education</h3>
+                            <div class="resume-education-item">
+                                <div class="resume-education-header">
+                                    <strong>Tarrant County College – Northwest Campus</strong>
+                                    <span class="resume-location">Fort Worth, TX</span>
+                                </div>
+                                <p class="resume-date">Dual Enrollment | Attended until May 2025</p>
+                            </div>
+                            <div class="resume-education-item">
+                                <div class="resume-education-header">
+                                    <strong>James M. Steele Early College High School</strong>
+                                    <span class="resume-location">Roanoke, TX</span>
+                                </div>
+                                <p class="resume-date">Attended until May 2025</p>
+                            </div>
+                            <div class="resume-education-item">
+                                <div class="resume-education-header">
+                                    <strong>University of Texas at Austin High School (UTHS)</strong>
+                                    <span class="resume-location">Austin, TX</span>
+                                </div>
+                                <p class="resume-date">High School Diploma | Graduated: December 2025</p>
+                            </div>
+                        </div>
+
+                        <div class="resume-section-item">
+                            <h3 class="resume-section-title">Volunteer Work/Projects & Awards</h3>
+                            <ul class="resume-list">
+                                <li>
+                                    <strong>Steele ECHS Green Cord Club – Christmas Tree Project</strong> [December 2023]
+                                    <p class="resume-detail">Made miniature Christmas trees out of various materials to give to children in need.</p>
+                                </li>
+                                <li>
+                                    <strong>Steele ECHS Green Cord Club – Appreciation Cards</strong> [April 2024]
+                                    <p class="resume-detail">Wrote positive, colorful thank you cards to commend people for their hard work and distributed them to service workers around my city.</p>
+                                </li>
+                                <li>
+                                    <strong>Steele ECHS Supercharge Event – Group Leader</strong> [October 2024]
+                                    <p class="resume-detail">Led a group of students to designated stations during the supercharge event that celebrated the last day of the 1st quarter.</p>
+                                </li>
+                                <li>
+                                    <strong>Trophy Club Women's Club – Scholarship Fundraiser</strong> [October 2023 & October 2024]
+                                    <p class="resume-detail">Put signs in many streets to raise awareness of a garage sale that went towards scholarships for seniors.</p>
+                                </li>
+                                <li>
+                                    <strong>National Honors Society – Individual Service Project</strong> [April 2025]
+                                    <p class="resume-detail">Mailed over 180 colorful drawings to an organization that sends them to senior citizens and troops overseas; also made a project to record the process</p>
+                                </li>
+                                <li>
+                                    <strong>Math UIL – UIL District 7 Competition</strong> [March 2025]
+                                    <p class="resume-detail">Earned a medal for achieving the 4th highest individual score in the district at the Math UIL Number Sense competition</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="resume-section-item">
+                            <h3 class="resume-section-title">Extracurriculars</h3>
+                            <ul class="resume-list">
+                                <li>Distributive Education Clubs of America (DECA) [September 2023 - May 2025]</li>
+                                <li>Green Cord Club [November 2023 - May 2025]</li>
+                                <li>National Honors Society [September 2024 - May 2025]</li>
+                                <li>Student Council – DASH Committee [September 2024 - May 2025]</li>
+                                <li>Math University Interscholastic League (UIL) [December 2024 - May 2025]</li>
+                                <li>Steele ECHS Junior Varsity Volleyball [February 2025 - May 2025]</li>
+                                <li>Taekwondo [December 2023 - Present]</li>
+                            </ul>
+                        </div>
+
+                        <div class="resume-section-item">
+                            <h3 class="resume-section-title">Certifications</h3>
+                            <ul class="resume-list">
+                                <li>OSHA-10 Hour General Industry Certification [Certified September 2023]</li>
+                                <li>Critical Career Skills – Professional Communication Certification [Certified September 2024]</li>
+                                <li>Excel Expert 365 & 2019 Certifications [Certified December 2023 & March 2025]</li>
+                                <li>Certified in 15 Different Certifications in Microsoft & Work Skills</li>
+                            </ul>
+                        </div>
+
+                        <div class="resume-section-item">
+                            <h3 class="resume-section-title">References</h3>
+                            <p class="resume-text">References available upon request.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Roman Badretdinov. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function downloadResumeAsPDF() {
+            // ADJUSTMENT: Change this value to shift content left/right (positive = right, negative = left)
+            // Values like 3-8 pixels usually work well for fine-tuning
+            const HORIZONTAL_SHIFT_PX = 5;
+            
+            const element = document.querySelector('.resume-document');
+            const originalParent = element.parentElement;
+            
+            // Store original styles
+            const originalDisplay = element.style.display;
+            const originalOpacity = element.style.opacity;
+            
+            // Create a clone
+            const clone = element.cloneNode(true);
+            clone.id = 'resume-pdf-clone';
+            
+            // Hide original temporarily
+            element.style.display = 'none';
+            
+            // Insert clone in place of original (temporarily)
+            originalParent.insertBefore(clone, element);
+            
+            // Apply PDF styles to clone
+            clone.style.width = '816px';
+            clone.style.maxWidth = '816px';
+            clone.style.margin = '0 auto';
+            // Apply horizontal shift by adjusting left padding (2rem = 32px base)
+            const leftPadding = (32 + HORIZONTAL_SHIFT_PX) + 'px';
+            clone.style.padding = `2rem 2rem 2rem ${leftPadding}`;
+            clone.style.backgroundColor = '#ffffff';
+            clone.style.borderRadius = '0';
+            clone.style.boxShadow = 'none';
+            clone.style.border = 'none';
+            clone.style.display = 'block';
+            clone.style.opacity = '1';
+            clone.style.boxSizing = 'border-box';
+            
+            // Force reflow so clone gets computed styles
+            void clone.offsetHeight;
+            
+            // Function to recursively apply PDF styles
+            function applyPDFStyles(node) {
+                if (node.nodeType === Node.ELEMENT_NODE) {
+                    const computed = window.getComputedStyle(node);
+                    
+                    // Preserve important layout properties as inline styles
+                    node.style.fontSize = computed.fontSize;
+                    node.style.fontWeight = computed.fontWeight;
+                    node.style.fontFamily = computed.fontFamily;
+                    node.style.lineHeight = computed.lineHeight;
+                    node.style.marginTop = computed.marginTop;
+                    node.style.marginBottom = computed.marginBottom;
+                    node.style.marginLeft = computed.marginLeft;
+                    node.style.marginRight = computed.marginRight;
+                    node.style.paddingTop = computed.paddingTop;
+                    node.style.paddingBottom = computed.paddingBottom;
+                    node.style.paddingLeft = computed.paddingLeft;
+                    node.style.paddingRight = computed.paddingRight;
+                    node.style.display = computed.display;
+                    node.style.textAlign = computed.textAlign;
+                    
+                    // Apply text colors for PDF
+                    const tagName = node.tagName.toLowerCase();
+                    if (node.classList.contains('resume-name')) {
+                        node.style.color = '#1e293b';
+                        node.style.fontSize = '2.5rem';
+                        node.style.fontWeight = '700';
+                    } else if (node.classList.contains('resume-section-title')) {
+                        node.style.color = '#1e293b';
+                        node.style.fontSize = '1.5rem';
+                        node.style.fontWeight = '600';
+                    } else if (['p', 'span', 'div', 'li', 'strong', 'em', 'ul', 'ol', 'a'].includes(tagName)) {
+                        if (!node.classList.contains('resume-name') && !node.classList.contains('resume-section-title')) {
+                            node.style.color = '#000000';
+                        }
+                    }
+                    
+                    // Clear non-white backgrounds
+                    const bg = computed.backgroundColor;
+                    if (bg && bg !== 'rgba(0, 0, 0, 0)' && bg !== 'transparent' && !bg.includes('255, 255, 255')) {
+                        node.style.backgroundColor = 'transparent';
+                    }
+                    
+                    // Process children
+                    Array.from(node.childNodes).forEach(child => applyPDFStyles(child));
+                }
+            }
+            
+            // Apply styles to clone (now that it's in DOM and has computed styles)
+            applyPDFStyles(clone);
+            
+            // Specific overrides
+            clone.querySelectorAll('.resume-contact, .resume-contact p, .resume-text, .resume-list li, .resume-date, .resume-location, .resume-detail').forEach(el => {
+                el.style.color = '#000000';
+            });
+            
+            clone.querySelectorAll('strong').forEach(strong => {
+                strong.style.color = '#000000';
+            });
+            
+            const header = clone.querySelector('.resume-header');
+            if (header) {
+                header.style.borderBottom = '2px solid #6366f1';
+            }
+            
+            // Force layout
+            void clone.offsetHeight;
+            
+            // Generate PDF
+            setTimeout(() => {
+                const opt = {
+                    margin: [0.5, 0.5, 0.5, 0.5],
+                    filename: 'Roman_Badretdinov_Resume.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { 
+                        scale: 2,
+                        useCORS: true,
+                        logging: false,
+                        letterRendering: true,
+                        backgroundColor: '#ffffff',
+                        width: 816,
+                        height: clone.scrollHeight,
+                        windowWidth: 816,
+                        windowHeight: clone.scrollHeight
+                    },
+                    jsPDF: { 
+                        unit: 'in', 
+                        format: 'letter',
+                        orientation: 'portrait'
+                    },
+                    pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+                };
+                
+                html2pdf().set(opt).from(clone).save().then(() => {
+                    // Restore original
+                    originalParent.removeChild(clone);
+                    element.style.display = originalDisplay || '';
+                    element.style.opacity = originalOpacity || '';
+                }).catch((error) => {
+                    console.error('PDF generation error:', error);
+                    alert('Error generating PDF: ' + error.message);
+                    // Restore original even on error
+                    originalParent.removeChild(clone);
+                    element.style.display = originalDisplay || '';
+                    element.style.opacity = originalOpacity || '';
+                });
+            }, 300);
+        }
+    </script>
+</body>
+</html>
+

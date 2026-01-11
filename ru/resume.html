@@ -1,34 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Resume and CV">
-    <title>Resume - Roman Badretdinov</title>
+    <meta name="description" content="Резюме и CV">
+    <title>Резюме - Роман Бадретдинов</title>
+    <link rel="alternate" hreflang="en" href="https://rbadretdinov.github.io/en/resume.html">
+    <link rel="alternate" hreflang="ru" href="https://rbadretdinov.github.io/ru/resume.html">
+    <link rel="alternate" hreflang="x-default" href="https://rbadretdinov.github.io/en/resume.html">
+    <link rel="canonical" href="https://rbadretdinov.github.io/ru/resume.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script src="theme-toggle.js" defer></script>
-    <script src="animations.js" defer></script>
+    <script src="/theme-toggle.js" defer></script>
+    <script src="/animations.js" defer></script>
+    <script src="/language-toggle.js" defer></script>
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">Roman Badretdinov</a>
+            <a href="/ru/index.html" class="nav-logo">Роман Бадретдинов</a>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About Me</a></li>
+                <li><a href="/ru/index.html" class="nav-link">Главная</a></li>
+                <li><a href="/ru/about.html" class="nav-link">Обо мне</a></li>
                 <li class="nav-dropdown">
-                    <a href="skills.html" class="nav-link">Skills <span class="dropdown-arrow">▼</span></a>
+                    <a href="/ru/skills.html" class="nav-link">Навыки <span class="dropdown-arrow">▼</span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="technical-skills.html">Technical Skills</a></li>
-                        <li><a href="certifications.html">Certifications</a></li>
+                        <li><a href="/ru/technical-skills.html">Технические навыки</a></li>
+                        <li><a href="/ru/certifications.html">Сертификаты</a></li>
                     </ul>
                 </li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="resume.html" class="nav-link active">Resume</a></li>
+                <li><a href="/ru/projects.html" class="nav-link">Проекты</a></li>
+                <li><a href="/ru/resume.html" class="nav-link active">Резюме</a></li>
                 <li>
                     <button class="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark mode">
                         <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -38,6 +43,7 @@
                             <path d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
                         </svg>
                     </button>
+                    <a href="#" class="language-toggle" aria-label="Switch to English">En</a>
                 </li>
             </ul>
         </div>
@@ -46,17 +52,17 @@
     <main>
         <section class="resume-section">
             <div class="container">
-                <h1 class="section-title">Resume</h1>
+                <h1 class="section-title">Резюме</h1>
                 <div class="resume-content">
                     <div class="resume-download">
                         <button onclick="downloadResumeAsPDF()" class="resume-download-btn">
-                            📄 Download PDF Resume
+                            📄 Скачать PDF резюме
                         </button>
                     </div>
                     
                     <div class="resume-document">
                         <div class="resume-header">
-                            <h2 class="resume-name">Roman Badretdinov</h2>
+                            <h2 class="resume-name">Роман Бадретдинов</h2>
                             <div class="resume-contact">
                                 <p>950 Spanish Needle Trail • Fort Worth, TX, 76177</p>
                                 <p>raynor.roma@gmail.com • 425-219-9888</p>
@@ -64,105 +70,105 @@
                         </div>
 
                         <div class="resume-section-item">
-                            <h3 class="resume-section-title">Summary</h3>
+                            <h3 class="resume-section-title">Резюме</h3>
                             <p class="resume-text">
-                                Ambitious and self-reliant student experienced with rigorous coursework through a dual credit program 
-                                and interested in majoring in Computer Science or other related field. Certified in various Microsoft 
-                                Office programs as well as life and career skills. Eager to learn new things, committed to surround 
-                                myself with like-minded individuals, and always open to improving myself through time and dedication.
+                                Амбициозный и самостоятельный студент с опытом работы с интенсивной учебной программой через программу двойного зачета 
+                                и заинтересованный в получении степени в области информатики или других связанных областях. Сертифицирован в различных программах 
+                                Microsoft Office, а также в жизненных и карьерных навыках. Стремлюсь изучать новое, привержен окружать себя единомышленниками 
+                                и всегда открыт для самосовершенствования через время и преданность делу.
                             </p>
                         </div>
 
                         <div class="resume-section-item">
-                            <h3 class="resume-section-title">Technical Skills</h3>
+                            <h3 class="resume-section-title">Технические навыки</h3>
                             <ul class="resume-list">
-                                <li>Python - Programming language for automation and web development</li>
-                                <li>HTML - Web page structure and markup</li>
-                                <li>AI Management - Using AI tools like Cursor AI for code generation and project management</li>
+                                <li>Python - Язык программирования для автоматизации и веб-разработки</li>
+                                <li>HTML - Структура и разметка веб-страниц</li>
+                                <li>Управление ИИ - Использование инструментов ИИ, таких как Cursor AI, для генерации кода и управления проектами</li>
                             </ul>
                         </div>
 
                         <div class="resume-section-item">
-                            <h3 class="resume-section-title">Education</h3>
+                            <h3 class="resume-section-title">Образование</h3>
                             <div class="resume-education-item">
                                 <div class="resume-education-header">
                                     <strong>Tarrant County College – Northwest Campus</strong>
                                     <span class="resume-location">Fort Worth, TX</span>
                                 </div>
-                                <p class="resume-date">Dual Enrollment | Attended until May 2025</p>
+                                <p class="resume-date">Двойное зачисление | Учился до мая 2025</p>
                             </div>
                             <div class="resume-education-item">
                                 <div class="resume-education-header">
                                     <strong>James M. Steele Early College High School</strong>
                                     <span class="resume-location">Roanoke, TX</span>
                                 </div>
-                                <p class="resume-date">Attended until May 2025</p>
+                                <p class="resume-date">Учился до мая 2025</p>
                             </div>
                             <div class="resume-education-item">
                                 <div class="resume-education-header">
                                     <strong>University of Texas at Austin High School (UTHS)</strong>
                                     <span class="resume-location">Austin, TX</span>
                                 </div>
-                                <p class="resume-date">High School Diploma | Graduated: December 2025</p>
+                                <p class="resume-date">Аттестат о среднем образовании | Окончил: декабрь 2025</p>
                             </div>
                         </div>
 
                         <div class="resume-section-item">
-                            <h3 class="resume-section-title">Volunteer Work/Projects & Awards</h3>
+                            <h3 class="resume-section-title">Волонтерская работа/Проекты и награды</h3>
                             <ul class="resume-list">
                                 <li>
-                                    <strong>Steele ECHS Green Cord Club – Christmas Tree Project</strong> [December 2023]
-                                    <p class="resume-detail">Made miniature Christmas trees out of various materials to give to children in need.</p>
+                                    <strong>Steele ECHS Green Cord Club – Проект рождественских елок</strong> [Декабрь 2023]
+                                    <p class="resume-detail">Изготовил миниатюрные рождественские елки из различных материалов, чтобы подарить детям, нуждающимся в помощи.</p>
                                 </li>
                                 <li>
-                                    <strong>Steele ECHS Green Cord Club – Appreciation Cards</strong> [April 2024]
-                                    <p class="resume-detail">Wrote positive, colorful thank you cards to commend people for their hard work and distributed them to service workers around my city.</p>
+                                    <strong>Steele ECHS Green Cord Club – Карточки благодарности</strong> [Апрель 2024]
+                                    <p class="resume-detail">Написал позитивные, красочные благодарственные открытки, чтобы отметить людей за их усердный труд, и распространил их среди работников сферы обслуживания в моем городе.</p>
                                 </li>
                                 <li>
-                                    <strong>Steele ECHS Supercharge Event – Group Leader</strong> [October 2024]
-                                    <p class="resume-detail">Led a group of students to designated stations during the supercharge event that celebrated the last day of the 1st quarter.</p>
+                                    <strong>Steele ECHS Supercharge Event – Лидер группы</strong> [Октябрь 2024]
+                                    <p class="resume-detail">Возглавил группу студентов к назначенным станциям во время мероприятия Supercharge, которое отмечало последний день 1-й четверти.</p>
                                 </li>
                                 <li>
-                                    <strong>Trophy Club Women's Club – Scholarship Fundraiser</strong> [October 2023 & October 2024]
-                                    <p class="resume-detail">Put signs in many streets to raise awareness of a garage sale that went towards scholarships for seniors.</p>
+                                    <strong>Trophy Club Women's Club – Сбор средств на стипендии</strong> [Октябрь 2023 и октябрь 2024]
+                                    <p class="resume-detail">Разместил вывески на многих улицах для повышения осведомленности о гаражной распродаже, средства от которой шли на стипендии для пожилых людей.</p>
                                 </li>
                                 <li>
-                                    <strong>National Honors Society – Individual Service Project</strong> [April 2025]
-                                    <p class="resume-detail">Mailed over 180 colorful drawings to an organization that sends them to senior citizens and troops overseas; also made a project to record the process</p>
+                                    <strong>National Honors Society – Индивидуальный проект служения</strong> [Апрель 2025]
+                                    <p class="resume-detail">Отправил более 180 красочных рисунков организации, которая отправляет их пожилым людям и военнослужащим за границей; также создал проект для записи процесса</p>
                                 </li>
                                 <li>
-                                    <strong>Math UIL – UIL District 7 Competition</strong> [March 2025]
-                                    <p class="resume-detail">Earned a medal for achieving the 4th highest individual score in the district at the Math UIL Number Sense competition</p>
+                                    <strong>Math UIL – Соревнование UIL District 7</strong> [Март 2025]
+                                    <p class="resume-detail">Получил медаль за достижение 4-го наивысшего индивидуального результата в округе на соревновании Math UIL Number Sense</p>
                                 </li>
                             </ul>
                         </div>
 
                         <div class="resume-section-item">
-                            <h3 class="resume-section-title">Extracurriculars</h3>
+                            <h3 class="resume-section-title">Внеклассная деятельность</h3>
                             <ul class="resume-list">
-                                <li>Distributive Education Clubs of America (DECA) [September 2023 - May 2025]</li>
-                                <li>Green Cord Club [November 2023 - May 2025]</li>
-                                <li>National Honors Society [September 2024 - May 2025]</li>
-                                <li>Student Council – DASH Committee [September 2024 - May 2025]</li>
-                                <li>Math University Interscholastic League (UIL) [December 2024 - May 2025]</li>
-                                <li>Steele ECHS Junior Varsity Volleyball [February 2025 - May 2025]</li>
-                                <li>Taekwondo [December 2023 - Present]</li>
+                                <li>Distributive Education Clubs of America (DECA) [Сентябрь 2023 - Май 2025]</li>
+                                <li>Green Cord Club [Ноябрь 2023 - Май 2025]</li>
+                                <li>National Honors Society [Сентябрь 2024 - Май 2025]</li>
+                                <li>Student Council – DASH Committee [Сентябрь 2024 - Май 2025]</li>
+                                <li>Math University Interscholastic League (UIL) [Декабрь 2024 - Май 2025]</li>
+                                <li>Steele ECHS Junior Varsity Volleyball [Февраль 2025 - Май 2025]</li>
+                                <li>Тхэквондо [Декабрь 2023 - Настоящее время]</li>
                             </ul>
                         </div>
 
                         <div class="resume-section-item">
-                            <h3 class="resume-section-title">Certifications</h3>
+                            <h3 class="resume-section-title">Сертификаты</h3>
                             <ul class="resume-list">
-                                <li>OSHA-10 Hour General Industry Certification [Certified September 2023]</li>
-                                <li>Critical Career Skills – Professional Communication Certification [Certified September 2024]</li>
-                                <li>Excel Expert 365 & 2019 Certifications [Certified December 2023 & March 2025]</li>
-                                <li>Certified in 15 Different Certifications in Microsoft & Work Skills</li>
+                                <li>Сертификат OSHA-10 Hour General Industry [Сертифицирован в сентябре 2023]</li>
+                                <li>Critical Career Skills – Сертификат профессионального общения [Сертифицирован в сентябре 2024]</li>
+                                <li>Сертификаты Excel Expert 365 и 2019 [Сертифицирован в декабре 2023 и марте 2025]</li>
+                                <li>Сертифицирован в 15 различных сертификациях Microsoft и рабочих навыков</li>
                             </ul>
                         </div>
 
                         <div class="resume-section-item">
-                            <h3 class="resume-section-title">References</h3>
-                            <p class="resume-text">References available upon request.</p>
+                            <h3 class="resume-section-title">Рекомендации</h3>
+                            <p class="resume-text">Рекомендации доступны по запросу.</p>
                         </div>
                     </div>
                 </div>
@@ -172,7 +178,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Roman Badretdinov. All rights reserved.</p>
+            <p>&copy; 2025 Роман Бадретдинов. Все права защищены.</p>
         </div>
     </footer>
 
@@ -289,7 +295,7 @@
             setTimeout(() => {
                 const opt = {
                     margin: [0.5, 0.5, 0.5, 0.5],
-                    filename: 'Roman_Badretdinov_Resume.pdf',
+                    filename: 'Роман_Бадретдинов_Резюме.pdf',
                     image: { type: 'jpeg', quality: 0.98 },
                     html2canvas: { 
                         scale: 2,

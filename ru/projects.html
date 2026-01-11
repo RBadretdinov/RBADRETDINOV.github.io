@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Портфолио проектов">
+    <title>Проекты - Роман Бадретдинов</title>
+    <link rel="alternate" hreflang="en" href="https://rbadretdinov.github.io/en/projects.html">
+    <link rel="alternate" hreflang="ru" href="https://rbadretdinov.github.io/ru/projects.html">
+    <link rel="alternate" hreflang="x-default" href="https://rbadretdinov.github.io/en/projects.html">
+    <link rel="canonical" href="https://rbadretdinov.github.io/ru/projects.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/theme-toggle.js" defer></script>
+    <script src="/animations.js" defer></script>
+    <script src="/language-toggle.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/ru/index.html" class="nav-logo">Роман Бадретдинов</a>
+            <ul class="nav-menu">
+                <li><a href="/ru/index.html" class="nav-link">Главная</a></li>
+                <li><a href="/ru/about.html" class="nav-link">Обо мне</a></li>
+                <li class="nav-dropdown">
+                    <a href="/ru/skills.html" class="nav-link">Навыки <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ru/technical-skills.html">Технические навыки</a></li>
+                        <li><a href="/ru/certifications.html">Сертификаты</a></li>
+                    </ul>
+                </li>
+                <li><a href="/ru/projects.html" class="nav-link active">Проекты</a></li>
+                <li><a href="/ru/resume.html" class="nav-link">Резюме</a></li>
+                <li>
+                    <button class="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark mode">
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/>
+                        </svg>
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
+                        </svg>
+                    </button>
+                    <a href="#" class="language-toggle" aria-label="Switch to English">En</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="projects-section">
+            <div class="container">
+                <h1 class="section-title">Мои проекты</h1>
+                <div class="projects-grid">
+                    
+                    <!-- Custom Macro Project -->
+                    <div class="project-card">
+                        <div class="project-image-comparison">
+                            <div class="comparison-item">
+                                <img src="/assets/images/project_covers/image.png" alt="Custom Macro - Текущая версия">
+                                <div class="comparison-label">Текущая версия</div>
+                            </div>
+                            <div class="comparison-item">
+                                <img src="/assets/images/project_covers/Screenshot 2025-12-20 161747.png" alt="Custom Macro - Улучшенная версия">
+                                <div class="comparison-label">Улучшенная версия</div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h2 class="project-title">Custom Macro - Автокликер</h2>
+                            <div class="project-description">
+                                <p><strong>Проблема:</strong></p>
+                                <ul>
+                                    <li>Пользователям нужно было поддерживать присутствие в приложениях/играх во время простоя</li>
+                                </ul>
+                                <p><strong>Решение:</strong></p>
+                                <ul>
+                                    <li>Приложение на Python с графическим интерфейсом и интуитивными кнопками Старт/Стоп</li>
+                                    <li>Автоматические клики левой кнопкой мыши через настраиваемые случайные интервалы (по умолчанию 7-15 секунд)</li>
+                                    <li>Настраиваемые интервалы кликов для различных случаев использования</li>
+                                </ul>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">GUI</span>
+                                <span class="tech-tag">Автоматизация</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/RBadretdinov/custom-macro" target="_blank" class="project-link"><span>GitHub</span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PNGs to PDF Converter Project -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/assets/images/project_covers/ChatGPT Image Dec 20, 2025, 04_30_08 PM.png" alt="PNGs to PDF Converter">
+                        </div>
+                        <div class="project-content">
+                            <h2 class="project-title">Конвертер PNG в PDF</h2>
+                            <div class="project-description">
+                                <p><strong>Проблема:</strong></p>
+                                <ul>
+                                    <li>Нужно было отправлять несколько изображений как один PDF для школьных заданий</li>
+                                    <li>Существующие конвертеры PDF требовали оплату или имели ограничения</li>
+                                </ul>
+                                <p><strong>Решение:</strong></p>
+                                <ul>
+                                    <li>Инструмент командной строки на Python, который конвертирует несколько изображений (PNG, JPG, JPEG) в один многостраничный PDF</li>
+                                    <li>Также может объединять несколько существующих PDF файлов в один</li>
+                                    <li>Бесплатное решение с открытым исходным кодом для личного использования</li>
+                                </ul>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Pillow (PIL)</span>
+                                <span class="tech-tag">PyPDF2</span>
+                                <span class="tech-tag">CLI</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/RBadretdinov/pngs-to-pdf-converter" target="_blank" class="project-link"><span>GitHub</span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Creator Project -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)); color: var(--text-color); font-size: 3rem;">
+                                ??
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h2 class="project-title">
+                                Создатель викторин
+                                <span class="project-status-badge">В разработке</span>
+                            </h2>
+                            <div class="project-description">
+                                <p><strong>Проблема:</strong></p>
+                                <ul>
+                                    <li>Нужен был эффективный способ подготовки к экзаменам и проверки знаний</li>
+                                    <li>Существующие инструменты для викторин имели недостаточную настройку или требовали оплату</li>
+                                    <li>Хотелось изучить современные практики веб-разработки</li>
+                                </ul>
+                                <p><strong>Решение:</strong></p>
+                                <ul>
+                                    <li>Веб-приложение для создания, настройки и обмена интерактивными викторинами</li>
+                                    <li>Интуитивный интерфейс для создания вопросов с множественным выбором</li>
+                                    <li>Автоматическая оценка и возможность обмена викторинами</li>
+                                    <li>Изучение современных практик разработки через разработку с поддержкой ИИ</li>
+                                </ul>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Веб-разработка</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/RBadretdinov/quiz-creator" target="_blank" class="project-link"><span>GitHub</span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Роман Бадретдинов. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+

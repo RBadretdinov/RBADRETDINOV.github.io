@@ -99,6 +99,13 @@ body {
     align-items: center;
 }
 
+/* Align theme toggle and language toggle in the same li */
+.nav-menu > li:has(.theme-toggle) {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
 /* Theme Toggle Button */
 .theme-toggle {
     background: transparent;
@@ -113,7 +120,6 @@ body {
     justify-content: center;
     transition: all 0.3s ease;
     font-size: 1.2rem;
-    margin-left: 1rem;
     position: relative;
     overflow: visible;
 }
@@ -195,6 +201,40 @@ body {
 [data-theme="light"] .theme-toggle .moon-icon {
     opacity: 0;
     transform: rotate(-90deg);
+}
+
+/* Language Toggle */
+.language-toggle {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.language-toggle:hover {
+    background-color: var(--surface-color);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-1px);
+}
+
+.language-toggle:active {
+    transform: translateY(0);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .language-toggle {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
 }
 
 .nav-link {
