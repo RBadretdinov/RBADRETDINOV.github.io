@@ -82,8 +82,9 @@
                         <div class="resume-section-item">
                             <h3 class="resume-section-title">Технические навыки</h3>
                             <ul class="resume-list">
-                                <li>Python - Язык программирования для автоматизации и веб-разработки</li>
+                                <li>Python - Язык программирования для автоматизации, создания скриптов и обработки данных</li>
                                 <li>HTML - Структура и разметка веб-страниц</li>
+                                <li>Git - Система контроля версий для отслеживания изменений кода и совместной работы</li>
                                 <li>Управление ИИ - Использование инструментов ИИ, таких как Cursor AI, для генерации кода и управления проектами</li>
                             </ul>
                         </div>
@@ -95,7 +96,7 @@
                                     <strong>Tarrant County College – Northwest Campus</strong>
                                     <span class="resume-location">Fort Worth, TX</span>
                                 </div>
-                                <p class="resume-date">Двойное зачисление | Учился до мая 2025</p>
+                                <p class="resume-date">Dual Enrollment, университетские кредиты | Учился до мая 2025</p>
                             </div>
                             <div class="resume-education-item">
                                 <div class="resume-education-header">
@@ -184,10 +185,6 @@
 
     <script>
         function downloadResumeAsPDF() {
-            // ADJUSTMENT: Change this value to shift content left/right (positive = right, negative = left)
-            // Values like 3-8 pixels usually work well for fine-tuning
-            const HORIZONTAL_SHIFT_PX = 5;
-            
             const element = document.querySelector('.resume-document');
             const originalParent = element.parentElement;
             
@@ -206,26 +203,38 @@
             originalParent.insertBefore(clone, element);
             
             // Apply PDF styles to clone
+            // Letter size: 8.5in = 816px at 96 DPI
+            // Use minimal padding to maximize content space - with border-box, padding is inside the width
+            const paddingValue = 20; // Reduced padding (20px = 1.25rem) to maximize content space
+            
+            clone.style.boxSizing = 'border-box';
             clone.style.width = '816px';
             clone.style.maxWidth = '816px';
-            clone.style.margin = '0 auto';
-            // Apply horizontal shift by adjusting left padding (2rem = 32px base)
-            const leftPadding = (32 + HORIZONTAL_SHIFT_PX) + 'px';
-            clone.style.padding = `2rem 2rem 2rem ${leftPadding}`;
+            clone.style.minWidth = '816px';
+            clone.style.margin = '0';
+            clone.style.padding = `${paddingValue}px`;
             clone.style.backgroundColor = '#ffffff';
             clone.style.borderRadius = '0';
             clone.style.boxShadow = 'none';
             clone.style.border = 'none';
             clone.style.display = 'block';
             clone.style.opacity = '1';
-            clone.style.boxSizing = 'border-box';
+            clone.style.overflow = 'visible';
+            clone.style.height = 'auto';
+            clone.style.minHeight = 'auto';
+            clone.style.position = 'relative';
             
             // Force reflow so clone gets computed styles
             void clone.offsetHeight;
             
+            
             // Function to recursively apply PDF styles
             function applyPDFStyles(node) {
                 if (node.nodeType === Node.ELEMENT_NODE) {
+                    // Skip spacer elements - they should not be modified by applyPDFStyles
+                    if (node.classList && node.classList.contains('pdf-page-break-spacer')) {
+                        return;
+                    }
                     const computed = window.getComputedStyle(node);
                     
                     // Preserve important layout properties as inline styles
@@ -274,6 +283,36 @@
             // Apply styles to clone (now that it's in DOM and has computed styles)
             applyPDFStyles(clone);
             
+            // Mark sections for page breaks with data attributes and inline styles
+            const volunteerTitleEarly = Array.from(clone.querySelectorAll('.resume-section-title'))
+                .find(title => title.textContent.trim() === 'Волонтерская работа/Проекты и награды');
+            if (volunteerTitleEarly) {
+                const volunteerSectionEarly = volunteerTitleEarly.closest('.resume-section-item');
+                if (volunteerSectionEarly) {
+                    volunteerSectionEarly.setAttribute('data-pagebreak-before', 'always');
+                    volunteerSectionEarly.setAttribute('data-page', '2');
+                    volunteerSectionEarly.style.setProperty('page-break-before', 'always', 'important');
+                    volunteerSectionEarly.style.setProperty('break-before', 'page', 'important');
+                    volunteerSectionEarly.style.marginTop = '0';
+                    console.log('Marked Volunteer Work section for page 2');
+                }
+            }
+            
+            // Force page break before Extracurriculars - apply directly to section
+            const extracurricularsTitleEarly = Array.from(clone.querySelectorAll('.resume-section-title'))
+                .find(title => title.textContent.trim() === 'Внеклассная деятельность');
+            if (extracurricularsTitleEarly) {
+                const extracurricularsSectionEarly = extracurricularsTitleEarly.closest('.resume-section-item');
+                if (extracurricularsSectionEarly) {
+                    extracurricularsSectionEarly.setAttribute('data-pagebreak-before', 'always');
+                    extracurricularsSectionEarly.setAttribute('data-page', '3');
+                    extracurricularsSectionEarly.style.setProperty('page-break-before', 'always', 'important');
+                    extracurricularsSectionEarly.style.setProperty('break-before', 'page', 'important');
+                    extracurricularsSectionEarly.style.marginTop = '0';
+                    console.log('Marked Extracurriculars section for page 3');
+                }
+            }
+            
             // Specific overrides
             clone.querySelectorAll('.resume-contact, .resume-contact p, .resume-text, .resume-list li, .resume-date, .resume-location, .resume-detail').forEach(el => {
                 el.style.color = '#000000';
@@ -288,48 +327,296 @@
                 header.style.borderBottom = '2px solid #6366f1';
             }
             
+            // Ensure no child elements overflow the container
+            // BUT EXCLUDE SPACERS - they need special handling
+            clone.querySelectorAll('*').forEach(el => {
+                // Skip spacer elements - they have special styling
+                if (el.classList && el.classList.contains('pdf-page-break-spacer')) {
+                    return;
+                }
+                const computed = window.getComputedStyle(el);
+                // Prevent horizontal overflow
+                if (computed.width && !computed.width.includes('%') && !computed.width.includes('auto')) {
+                    const widthValue = parseFloat(computed.width);
+                    if (widthValue > 776) { // 816 - 40 (20px padding each side)
+                        el.style.maxWidth = '100%';
+                        el.style.width = 'auto';
+                    }
+                }
+                // Ensure text wraps
+                el.style.wordWrap = 'break-word';
+                el.style.overflowWrap = 'break-word';
+            });
+            
+            // Add page break CSS to help with multi-page rendering
+            const style = document.createElement('style');
+            style.textContent = `
+                #resume-pdf-clone .resume-section-item {
+                    page-break-inside: avoid;
+                    break-inside: avoid;
+                }
+                #resume-pdf-clone .resume-section-item:last-child {
+                    page-break-inside: auto;
+                    break-inside: auto;
+                }
+                #resume-pdf-clone .resume-list li {
+                    page-break-inside: avoid;
+                    break-inside: avoid;
+                }
+                #resume-pdf-clone h3 {
+                    page-break-after: avoid;
+                    break-after: avoid;
+                }
+                /* Force page break before Volunteer Work section - start at top of page 2 */
+                #resume-pdf-clone .resume-section-item[data-page="2"] {
+                    page-break-before: always !important;
+                    break-before: page !important;
+                    margin-top: 0 !important;
+                }
+                /* Force page break before Extracurriculars section - start at top of page 3 */
+                #resume-pdf-clone .resume-section-item[data-page="3"] {
+                    page-break-before: always !important;
+                    break-before: page !important;
+                    margin-top: 0 !important;
+                }
+            `;
+            document.head.appendChild(style);
+            
+            
             // Force layout
             void clone.offsetHeight;
             
             // Generate PDF
             setTimeout(() => {
-                const opt = {
-                    margin: [0.5, 0.5, 0.5, 0.5],
-                    filename: 'Роман_Бадретдинов_Резюме.pdf',
-                    image: { type: 'jpeg', quality: 0.98 },
-                    html2canvas: { 
-                        scale: 2,
-                        useCORS: true,
-                        logging: false,
-                        letterRendering: true,
-                        backgroundColor: '#ffffff',
-                        width: 816,
-                        height: clone.scrollHeight,
-                        windowWidth: 816,
-                        windowHeight: clone.scrollHeight
-                    },
-                    jsPDF: { 
-                        unit: 'in', 
-                        format: 'letter',
-                        orientation: 'portrait'
-                    },
-                    pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-                };
-                
-                html2pdf().set(opt).from(clone).save().then(() => {
-                    // Restore original
-                    originalParent.removeChild(clone);
-                    element.style.display = originalDisplay || '';
-                    element.style.opacity = originalOpacity || '';
-                }).catch((error) => {
-                    console.error('PDF generation error:', error);
-                    alert('Error generating PDF: ' + error.message);
-                    // Restore original even on error
-                    originalParent.removeChild(clone);
-                    element.style.display = originalDisplay || '';
-                    element.style.opacity = originalOpacity || '';
+                // Force all children to be visible and remove height restrictions
+                // BUT EXCLUDE SPACERS - they need to keep their height!
+                clone.querySelectorAll('*').forEach(el => {
+                    // Skip spacer elements - they must keep their height
+                    if (el.classList && el.classList.contains('pdf-page-break-spacer')) {
+                        return;
+                    }
+                    el.style.overflow = 'visible';
+                    el.style.maxHeight = 'none';
+                    el.style.height = 'auto';
                 });
-            }, 300);
+                
+                // Force layout recalculation
+                void clone.offsetHeight;
+                const actualHeight = Math.max(clone.scrollHeight, clone.offsetHeight, clone.clientHeight);
+                
+                // Wait a bit more for rendering
+                setTimeout(() => {
+                    // Recalculate height after styles are fully applied - ensure we get the FULL height
+                    // Force a full layout pass by scrolling to the bottom
+                    const scrollHeight = clone.scrollHeight;
+                    const offsetHeight = clone.offsetHeight;
+                    const clientHeight = clone.clientHeight;
+                    
+                    // Get the maximum of all measurements, then add a buffer
+                    const measuredHeight = Math.max(scrollHeight, offsetHeight, clientHeight);
+                    // Check if there's more content by comparing with all child elements
+                    let maxBottom = 0;
+                    clone.querySelectorAll('*').forEach(el => {
+                        const rect = el.getBoundingClientRect();
+                        const bottom = rect.bottom + clone.getBoundingClientRect().top;
+                        if (bottom > maxBottom) maxBottom = bottom;
+                    });
+                    
+                    // Exclude spacer elements from height calculation to prevent empty page 4
+                    let contentHeight = 0;
+                    clone.querySelectorAll('.resume-section-item, .resume-header').forEach(el => {
+                        const rect = el.getBoundingClientRect();
+                        const bottom = rect.bottom + clone.getBoundingClientRect().top;
+                        if (bottom > contentHeight) contentHeight = bottom;
+                    });
+                    
+                    const finalHeight = Math.max(measuredHeight, maxBottom, contentHeight) + 20; // Small buffer, excluding spacers
+                    
+                    // Calculate actual rendered width
+                    // With border-box, offsetWidth is the total width (816px)
+                    const renderedWidth = clone.offsetWidth || 816;
+                    // Add extra buffer to ensure nothing is cut off (capture slightly more than needed)
+                    const captureWidth = renderedWidth + 20; // Add 20px buffer on each side for safety
+                    
+                    const opt = {
+                        margin: [0.1, 0.1, 0.1, 0.1], // Minimal margins (0.1in ≈ 9.6px)
+                        filename: 'Роман_Бадретдинов_Резюме.pdf',
+                        image: { type: 'jpeg', quality: 0.98 },
+                        html2canvas: { 
+                            scale: 2,
+                            useCORS: true,
+                            logging: true, // Enable logging to debug
+                            letterRendering: true,
+                            backgroundColor: '#ffffff',
+                            width: captureWidth,
+                            height: finalHeight,
+                            windowWidth: captureWidth,
+                            windowHeight: finalHeight,
+                            scrollX: 0,
+                            scrollY: 0,
+                            allowTaint: true,
+                            removeContainer: false,
+                            x: 0,
+                            y: 0,
+                            ignoreElements: function(element) {
+                                // Don't capture the download button if it's still in the clone
+                                return element.classList && element.classList.contains('resume-download');
+                            },
+                            onclone: function(clonedDoc) {
+                                try {
+                                    // Ensure all content is visible in the cloned document
+                                    const clonedElement = clonedDoc.querySelector('#resume-pdf-clone');
+                                    if (!clonedElement) {
+                                        console.error('Could not find resume-pdf-clone element');
+                                        return;
+                                    }
+                                    clonedElement.style.overflow = 'visible';
+                                    clonedElement.style.height = 'auto';
+                                    clonedElement.style.maxHeight = 'none';
+                                    // Ensure all children are visible
+                                    clonedElement.querySelectorAll('*').forEach(el => {
+                                        el.style.overflow = 'visible';
+                                        el.style.maxHeight = 'none';
+                                        el.style.display = el.style.display || 'block';
+                                    });
+                                    
+                                    // MANUAL PAGE BREAK APPROACH: Calculate positions and add spacing
+                                    // Letter page: 8.5" x 11" = 816px x 1056px at 96 DPI
+                                    // With 0.1" margins (9.6px top and bottom), usable height per page ≈ 1037px
+                                    const PAGE_HEIGHT = 1037; // Approximate usable height per page
+                                    const TOP_MARGIN = 9.6; // Top margin in pixels
+                                    
+                                    // Get all sections in order
+                                    const header = clonedElement.querySelector('.resume-header');
+                                    const sections = Array.from(clonedElement.querySelectorAll('.resume-section-item'));
+                                    
+                                    // Helper function to get total height of an element including margins
+                                    function getTotalHeight(element) {
+                                        if (!element) return 0;
+                                        const rect = element.getBoundingClientRect();
+                                        const computed = window.getComputedStyle(element);
+                                        return rect.height + 
+                                               parseFloat(computed.marginTop) + 
+                                               parseFloat(computed.marginBottom);
+                                    }
+                                    
+                                    // Calculate cumulative height up to Volunteer Work (should start at top of page 2)
+                                    const volunteerIndex = sections.findIndex(section => {
+                                        const title = section.querySelector('.resume-section-title');
+                                        return title && title.textContent.trim() === 'Волонтерская работа/Проекты и награды';
+                                    });
+                                    
+                                    if (volunteerIndex >= 0) {
+                                        let cumulativeHeight = TOP_MARGIN; // Start with top margin of first page
+                                        
+                                        // Add header height
+                                        if (header) {
+                                            cumulativeHeight += getTotalHeight(header);
+                                        }
+                                        
+                                        // Add all sections before Volunteer Work
+                                        for (let i = 0; i < volunteerIndex; i++) {
+                                            cumulativeHeight += getTotalHeight(sections[i]);
+                                        }
+                                        
+                                        // Calculate spacing needed to push Volunteer Work to start of page 2
+                                        // We want it to start at PAGE_HEIGHT (top of page 2)
+                                        // Add extra buffer to ensure it's pushed far enough down
+                                        const spacingNeeded = Math.max(0, PAGE_HEIGHT - cumulativeHeight + 100);
+                                        
+                                        if (volunteerIndex > 0) {
+                                            const prevSection = sections[volunteerIndex - 1];
+                                            const currentMarginBottom = parseFloat(window.getComputedStyle(prevSection).marginBottom) || 0;
+                                            prevSection.style.setProperty('margin-bottom', (currentMarginBottom + spacingNeeded) + 'px', 'important');
+                                            console.log('Added', spacingNeeded.toFixed(2), 'px spacing before Volunteer Work to push to top of page 2');
+                                        }
+                                    }
+                                    
+                                    // Calculate cumulative height up to Extracurriculars (should start at top of page 3)
+                                    const extracurricularsIndex = sections.findIndex(section => {
+                                        const title = section.querySelector('.resume-section-title');
+                                        return title && title.textContent.trim() === 'Внеклассная деятельность';
+                                    });
+                                    
+                                    if (extracurricularsIndex >= 0) {
+                                        let cumulativeHeight = TOP_MARGIN; // Start with top margin of first page
+                                        
+                                        // Add header height
+                                        if (header) {
+                                            cumulativeHeight += getTotalHeight(header);
+                                        }
+                                        
+                                        // Add all sections before Extracurriculars
+                                        for (let i = 0; i < extracurricularsIndex; i++) {
+                                            cumulativeHeight += getTotalHeight(sections[i]);
+                                        }
+                                        
+                                        // Calculate spacing needed to push Extracurriculars to start of page 3
+                                        // We want it to start exactly at PAGE_HEIGHT * 2 (top of page 3)
+                                        const spacingNeeded = Math.max(0, (PAGE_HEIGHT * 2) - cumulativeHeight);
+                                        
+                                        if (spacingNeeded > 0 && extracurricularsIndex > 0) {
+                                            const prevSection = sections[extracurricularsIndex - 1];
+                                            const currentMarginBottom = parseFloat(window.getComputedStyle(prevSection).marginBottom) || 0;
+                                            prevSection.style.setProperty('margin-bottom', (currentMarginBottom + spacingNeeded) + 'px', 'important');
+                                            console.log('Added', spacingNeeded.toFixed(2), 'px spacing before Extracurriculars to push to top of page 3');
+                                        }
+                                    }
+                                    
+                                    // Prevent list items from breaking across pages
+                                    clonedElement.querySelectorAll('.resume-list li').forEach(li => {
+                                        li.style.setProperty('page-break-inside', 'avoid', 'important');
+                                        li.style.setProperty('break-inside', 'avoid', 'important');
+                                    });
+                                    
+                                    // Log to verify all sections are present
+                                    const allSections = clonedElement.querySelectorAll('.resume-section-item');
+                                    console.log('PDF Clone - Number of sections found:', allSections.length);
+                                    allSections.forEach((section, index) => {
+                                        const title = section.querySelector('.resume-section-title');
+                                        console.log(`Section ${index + 1}:`, title ? title.textContent.trim() : 'Unknown');
+                                    });
+                                } catch (error) {
+                                    console.error('Error in onclone callback:', error);
+                                }
+                            }
+                        },
+                        jsPDF: { 
+                            unit: 'in', 
+                            format: 'letter',
+                            orientation: 'portrait',
+                            compress: true
+                        },
+                        pagebreak: { 
+                            mode: ['css', 'legacy'], 
+                            avoid: ['.resume-header', '.resume-education-header', 'h3'],
+                            before: '[data-pagebreak-before="always"]',
+                            after: '.pdf-page-break-spacer'
+                        }
+                    };
+                    
+                    html2pdf().set(opt).from(clone).save().then(() => {
+                        // Clean up the style element
+                        document.head.removeChild(style);
+                        // Restore original
+                        originalParent.removeChild(clone);
+                        element.style.display = originalDisplay || '';
+                        element.style.opacity = originalOpacity || '';
+                        console.log('PDF generated successfully');
+                    }).catch((error) => {
+                        console.error('PDF generation error:', error);
+                        // Clean up the style element even on error
+                        if (style.parentNode) {
+                            document.head.removeChild(style);
+                        }
+                        alert('Error generating PDF: ' + error.message);
+                        // Restore original even on error
+                        originalParent.removeChild(clone);
+                        element.style.display = originalDisplay || '';
+                        element.style.opacity = originalOpacity || '';
+                    });
+                }, 300); // Increased timeout to ensure full rendering
+            }, 400); // Increased initial timeout
         }
     </script>
 </body>
