@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-pdf-generator",
+  "version": "1.0.0",
+  "description": "Generate PDF portfolios from HTML",
+  "main": "generate-pdf.js",
+  "scripts": {
+    "generate": "node generate-pdf.js"
+  },
+  "dependencies": {
+    "playwright": "^1.40.0"
+  }
+}
+
